@@ -1,30 +1,48 @@
 <!DOCTYPE html>
 <html>
     <head>
-            <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>
-
+          Bachao-App
         </title>
-    </head>
-    <body>
-            <div id="mySidenav" class="sidenav">
-                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                    <a href="#">Alarm</a>
-                    <a href="#">Police</a>
-                    <a href="#">E-Numbers</a>
-                    <a href="#">Help Me!</a>
-                  </div>
-                  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
-                  
-                  <script>
-                  function openNav() {
-                    document.getElementById("mySidenav").style.width = "250px";
-                  }
-                  
-                  function closeNav() {
-                    document.getElementById("mySidenav").style.width = "0";
-                  }
-                  </script>
+            <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <a class="navbar-brand" href="#">Bachao</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Self Defence Techniques</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Helpline</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">(You should Know)Women's Health</a>
+      </li> 
+      <li class="nav-item">
+        <a class="nav-link" href="#">Help</a>
+      </li>    
+    </ul>
+  </div>  
+</nav>
+<br>
+
+<div class="container">
+ <button class="body">Alarm</button><br>
+ <button>Police</button></br>
+ <button>E-numbers</button><br>
+ <button>Help Me!</button>
+</div>
                      
-    </body>
+</body>
 </html>

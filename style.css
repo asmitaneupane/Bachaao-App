@@ -16,6 +16,16 @@ color: #ff6f00;
 .dark-teal-text {
 color: #004d40;
 }
-.body{
-  margin: 3px;
+.addButton--active{
+  border-color: #0066B7
+  &:before,
+  &:after 
+    border-color: #0066B7
+  &:hover
+    background:rgba(2, 104, 190, 0.10)
 }
+  .menu .menu-item
+  {
+   width:100%;
+   margin-bottom: 2px;
+  }

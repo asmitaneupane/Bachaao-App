@@ -48,6 +48,25 @@
   <div class="menu">
    <!--   <button class="menu-item btn btn-warning btn-lg" onclick="seTimeout(pushAlarm,200)" id="alarmLabel">Alarm</button> -->
      <button class="menu-item btn btn-warning btn-lg" onclick="pushAlarm()" id="alarmLabel">Alarm</button>
+
+   </br>
+     <a href="tel:100">
+     <button class="menu-item btn btn-secondary btn-lg">Police</button>
+     </a>
+   </br>
+    <a href="sms://9865349844,9845517653?&body=Help Me !">
+     <button class="menu-item btn btn-success btn-lg">E-numbers</button>
+    </a>
+    <br>
+     <button class="menu-item btn btn-danger btn-lg">Help Me!</button>
+     <button class="menu-item btn btn-danger btn-lg">Anti-Child Marriage</button>
+     <button class="menu-item btn btn-dark btn-lg" onclick="getLocation()">Get Location</button>
+
+  </div>
+</div>
+
+<p id="demo">hmm</p>
+</body>
 <script>
   function pushAlarm()
   {
@@ -64,17 +83,19 @@
       al.innerHTML="Alarm";
     }
   }
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
 </script>
-   </br>
-    <a href="tel:100">
-     <button class="menu-item btn btn-secondary btn-lg">Police</button>
-     </a>
-   </br>
-     <button class="menu-item btn btn-success btn-lg">E-numbers</button><br>
-     <button class="menu-item btn btn-danger btn-lg">Help Me!</button>
-     <button class="menu-item btn btn-danger btn-lg">Anti-Child Marriage</button>
-  </div>
-</div>
-                     
-</body>
 </html>

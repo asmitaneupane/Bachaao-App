@@ -41,12 +41,38 @@
 </nav>
 <br>
 
+<audio id="notify" loop>
+  <source src="./assets/siren_alert.mp3" type="audio/mpeg">
+</audio>
 <div class="container">
   <div class="menu">
-     <button class="menu-item btn btn-warning btn-lg">Alarm</button></br>
-     <button class="menu-item btn btn-secondary btn-lg">Police</button></br>
+   <!--   <button class="menu-item btn btn-warning btn-lg" onclick="seTimeout(pushAlarm,200)" id="alarmLabel">Alarm</button> -->
+     <button class="menu-item btn btn-warning btn-lg" onclick="pushAlarm()" id="alarmLabel">Alarm</button>
+<script>
+  function pushAlarm()
+  {
+    var al=document.getElementById('alarmLabel');
+  var sound= document.getElementById('notify');
+
+  if(sound.paused)
+    {
+      sound.play();
+      al.innerHTML="Stop";
+    }
+  else{
+      sound.pause();
+      al.innerHTML="Alarm";
+    }
+  }
+</script>
+   </br>
+    <a href="tel:100">
+     <button class="menu-item btn btn-secondary btn-lg">Police</button>
+     </a>
+   </br>
      <button class="menu-item btn btn-success btn-lg">E-numbers</button><br>
      <button class="menu-item btn btn-danger btn-lg">Help Me!</button>
+     <button class="menu-item btn btn-danger btn-lg">Anti-Child Marriage</button>
   </div>
 </div>
                      

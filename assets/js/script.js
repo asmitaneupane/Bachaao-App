@@ -28,9 +28,7 @@ function eCall()
 
 }
 
-function sendSMS(){
-    var number = "9845517653"; /* iOS: ensure number is actually a string */
-    var message = "Help me please";
+function sendSMS(number,message){
     console.log("number=" + number + ", message= " + message);
 
     //CONFIGURATION
@@ -53,6 +51,7 @@ function helpMe()
   pushAlarm();
   callPolice();
   eCall();
+  eSMS();
 }
 function addNumber()
 {
@@ -73,20 +72,28 @@ function getNumbers()
 }
 
 
+function eSMS(){
+  getLocation();
+  current_location = localStorage.getItem("location");
+  message = "Help me ! My location is : "+current_location;
+  number = "9811126761";
+  sendSMS(number,message);
+}
 
 
 function getLocation() {
   var x = document.getElementById("mylocation");
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
+  navigator.geolocation.getCurrentPosition(function (position) {
+      var latitude = position.coords.latitude;
+      var longitude = position.coords.longitude;
+      localStorage.location = longitude+","+latitude;
+      x.innerHTML= longitude+","+latitude;
+    });
   } else { 
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
 }
 
-function showPosition(position) {
-  var x = document.getElementById("mylocation");
-  x.innerHTML = "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude;
-}
+
 

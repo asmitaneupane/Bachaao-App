@@ -23,7 +23,7 @@
     });
     </script> 
 
-<div id="navbar"></div>
+<!-- <div id="navbar"></div>
 <table>
 	<th>
 		<td>Name</td>
@@ -31,17 +31,11 @@
 	</th>
 </table>
 
-
-
-
-<!-- Trigger the modal with a button -->
 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><i class="fas fa-plus"></i></button>
 
-<!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
-    <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title">Add Name and Number</h4>
@@ -67,4 +61,29 @@
     </div>
 
   </div>
+</div> -->
+
+
+<div class="h1">List of Numbers</div>
+
+<table id="numberTable" class="table">
+  <thead>
+    <th>Name</th>
+    <th>Number</th>
+  </thead>
+  <tbody id="numberTableBody">
+  </tbody>
+</table>
+
+<button type="button" class="btn btn-primary mb-2" onclick=refreshList()>Refresh List</button>
+
+<form class="form-inline">
+    <label class="sr-only" for="number">Name</label>
+    <input type="text" class="form-control mb-2 mr-sm-2" id="name" placeholder="Name of Person">
+    
+    <label class="sr-only" for="number">Name</label>
+    <input type="text" class="form-control mb-2 mr-sm-2" id="number" placeholder="Contact Number">
+    <button type="button" class="btn btn-primary mb-2" onclick=addNumber()>Add</button>
+    <button type="button" class="btn btn-primary mb-2" onclick=removeNumber()>Remove Number</button>
+</form>
 </div>

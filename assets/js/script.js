@@ -23,7 +23,7 @@ function callPolice()
 
 function eCall()
 {
-  location.href = 'sms: my name is ashmi and i am in problem';
+  location.href = 'tel://';
     // alert("Call");
 
 }
@@ -53,24 +53,6 @@ function helpMe()
   eCall();
   eSMS();
 }
-function addNumber()
-{
-
-  var form = new FormData(document.getElementById("addNumberForm"));
-  var myname=$("#myname").innerHTML;
-  var mynumber=$("#mynumber").innerHTML;
-
-  // var list=[];
-  // localStorage.setItem(myname,mynumber);
-  // console.log(localStorage.getItem(myname));
-  // alert("done");
-}
-
-function getNumbers()
-{
-  var list=localStorage.getItem("enumbers");
-}
-
 
 function eSMS(){
   getLocation();
@@ -96,55 +78,48 @@ function getLocation() {
 }
 
 
-var data={};
-var datas=[];
-
 function addNumber()
 {
+  var data={};
+  var datas=[];
   var name = document.getElementById("name").value;
   var number = document.getElementById("number").value;
  
   data.name=name;
   data.number=number;
 
-  console.log("datas: ",datas);
-
-    if(JSON.parse(localStorage.getItem("enumbers")==null))
-    {
-        localStorage.setItem('enumbers',JSON.stringify(data));
-    }
-    else
-    {
-      datas=[];
-      datas.push(JSON.parse(localStorage.getItem("enumbers")));
-      console.log("DATAS:",JSON.stringify(datas));
-      console.log("Data:",JSON.stringify(data));
-      datas.push(JSON.stringify(data));
+  if(JSON.parse(localStorage.getItem("enumbers")==null))
+  {
+      datas.push(data)
       localStorage.setItem('enumbers',JSON.stringify(datas));
-    }
-       
-
-  console.log("Name: ",name,"Number: ",number);
-
-  var numberTableBody = document.getElementById("numberTableBody");
-  var tr = document.createElement("tr");
-  var nametd = document.createElement("td");
-  var numbertd = document.createElement("td");
-
-  nametd.appendChild(document.createTextNode(name));
-  tr.appendChild(nametd);
-  numbertd.appendChild(document.createTextNode(number));
-  tr.appendChild(numbertd);
-  numberTableBody.appendChild(tr);
+  }
+  else
+  {
+    datas = JSON.parse(localStorage.getItem("enumbers"))
+    datas.push(data);
+    localStorage.setItem('enumbers',JSON.stringify(datas));
+  }
+  refreshList();  
 }
-function removeNumber()
+
+function removeNumber(name)
 {
-  
-  document.getElementById("numberTable").deleteRow(1); 
-
+  datas = JSON.parse(localStorage.getItem("enumbers"))
+  $.each(datas,function( key, value ) {
+    if(value != null){
+    if (name == value.name){
+        delete datas[key];
+      }
+    }
+  });
+  localStorage.setItem('enumbers',JSON.stringify(datas));
+  location.reload();
 }
+
+
 function refreshList()
 {
+  location.reload(); 
   console.log("refreshing...");
   
 }
@@ -154,5 +129,7 @@ function getRow(element)
   console.log("row",row);
   document.getElementById("numberTable");
 }
+
+
 
 

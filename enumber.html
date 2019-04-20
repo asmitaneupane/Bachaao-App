@@ -71,7 +71,7 @@
     <th>Name</th>
     <th>Number</th>
   </thead>
-  <tbody id="numberTableBody">
+  <tbody id="numberTableBody"> 
   </tbody>
 </table>
 
@@ -84,6 +84,37 @@
     <label class="sr-only" for="number">Name</label>
     <input type="text" class="form-control mb-2 mr-sm-2" id="number" placeholder="Contact Number">
     <button type="button" class="btn btn-primary mb-2" onclick=addNumber()>Add</button>
-    <button type="button" class="btn btn-primary mb-2" onclick=removeNumber()>Remove Number</button>
 </form>
 </div>
+<script>
+$(function(){
+
+  datas = JSON.parse(localStorage.getItem("enumbers"));
+  drawTable(datas)
+  function drawTable(data) {
+    for (var i = 0; i < data.length; i++) {
+      if(data[i] !=null){
+      drawRow(data[i]);
+      }
+    }
+  }
+
+function drawRow(rowData) {
+    var row = $("<tr />")
+    $("#numberTable").append(row); //this will append tr element to table... keep its reference for a while since we will add cels into it
+    row.append($("<td>" + rowData.name + "</td>"));
+    row.append($("<td>" + rowData.number + "</td>"));
+    markup = "<td class='todelete'></td>" 
+    row.append($(markup));
+    
+}
+$('<input></input>').attr({'type': 'button'}).val("delete").click(function(){
+          var row = $(this).closest("tr").find("td:nth-child(1)");
+          var key = row.text();
+          removeNumber(key);
+        }).appendTo($('td.todelete'));
+});
+</script>
+
+</body>
+</html>

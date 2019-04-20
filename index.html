@@ -1,55 +1,57 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-          Bachaao-App
-        </title>
-            <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-<link rel="stylesheet" href="./assets/css/style.css">
-<script src="./assets/js/popper.min.js"></script>
-<script src="./assets/js/jquery.min.js"></script>
-<script src="./assets/js/bootstrap.min.js"></script>
-<script src="./assets/js/script.js" type="text/javascript"></script>
+
+<head>
+    <title>
+        Bachaao-App
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/script.js" type="text/javascript"></script>
 
 
 </head>
+
 <body>
 
- <script> 
-    $(function(){
-      $("#navbar").load("navbar.html"); 
-    });
-    </script> 
+    <script>
+        $(function() {
+            $("#navbar").load("navbar.html");
+        });
+    </script>
 
-<div id="navbar"></div>
+    <div id="navbar"></div>
 
-<br>
+    <br>
 
 
-<audio id="notify" loop>
+    <audio id="notify" loop>
   <source src="./assets/siren_alert.mp3" type="audio/mpeg">
 </audio>
-<div class="container">
-  <div class="menu">
-   <!--   <button class="menu-item btn btn-warning btn-lg" onclick="seTimeout(pushAlarm,200)" id="alarmLabel">Alarm</button> -->
-     <button class="menu-item btn btn-warning btn-lg" onclick="pushAlarm()" id="alarmLabel">Alarm</button>
+    <div class="container">
+        <div class="menu">
+            <!--   <button class="menu-item btn btn-warning btn-lg" onclick="seTimeout(pushAlarm,200)" id="alarmLabel">Alarm</button> -->
+            <button class="menu-item btn btn-warning btn-lg" onclick="pushAlarm()" id="alarmLabel">Alarm</button>
 
-   </br>
-    <!-- <a href="tel:100"> -->
-     <button class="menu-item btn btn-secondary btn-lg" onclick="callPolice()">Police</button>
-     <!-- </a> -->
-   </br>
-     <button class="menu-item btn btn-success btn-lg" onclick="eCall()">E-numbers</button><br>
-     <button class="menu-item btn btn-danger btn-lg" onclick="helpMe()">Help Me!</button>
-     <button class="menu-item btn btn-danger btn-lg">Anti-Child Marriage</button>
-     <button class="menu-item btn btn-dark btn-lg" onclick="getLocation()">Get Location</button>
-     <button class="menu-item btn btn-warning btn-lg" onclick="eSMS()">Send SMS</button>
+            </br>
+            <!-- <a href="tel:100"> -->
+            <button class="menu-item btn btn-secondary btn-lg" onclick="callPolice()">Police</button>
+            <!-- </a> -->
+            </br>
+            <button class="menu-item btn btn-success btn-lg" onclick="eCall()">E-numbers</button><br>
+            <button class="menu-item btn btn-danger btn-lg" onclick="helpMe()">Help Me!</button>
+            <button class="menu-item btn btn-dark btn-lg" onclick="getLocation()">Get Location</button>
+            <button class="menu-item btn btn-warning btn-lg" onclick="eSMS()">Send SMS</button>
 
-   <div id="mylocation"></div>
-  </div>
-</div>
-                     
+            <div id="mylocation"></div>
+        </div>
+    </div>
+
 </body>
+
 </html>

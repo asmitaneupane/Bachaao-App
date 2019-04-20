@@ -35,3 +35,20 @@ function helpMe()
   callPolice();
   eCall();
 }
+function addNumber()
+{
+
+  var form = new FormData(document.getElementById("addNumberForm"));
+  var myname=$("#myname").innerHTML;
+  var mynumber=$("#mynumber").innerHTML;
+
+  // var list=[];
+  // localStorage.setItem(myname,mynumber);
+  // console.log(localStorage.getItem(myname));
+  // alert("done");
+}
+
+function getNumbers()
+{
+  var list=localStorage.getItem("enumbers");
+}

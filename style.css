@@ -29,3 +29,7 @@ color: #004d40;
    width:100%;
    margin-bottom: 2px;
   }
+  .close
+  {
+    float: right;
+  }

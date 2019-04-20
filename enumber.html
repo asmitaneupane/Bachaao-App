@@ -2,22 +2,69 @@
 <html>
     <head>
         <title>
-          Bachao-App
+          Bachaao-App
         </title>
             <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="./bootstrap-4.3.1-dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="./assets/css/style.css">
 <script src="./bootstrap-4.3.1-dist/js/popper.min.js"></script>
 <script src="./bootstrap-4.3.1-dist/js/jquery.min.js"></script>
 <script src="./bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
-<script src="./script.js" type="text/javascript"></script>
+<script src="./assets/js/script.js" type="text/javascript"></script>
+
+
 </head>
 <body>
-<script> 
+
+ <script> 
     $(function(){
       $("#navbar").load("navbar.html"); 
     });
     </script> 
 
 <div id="navbar"></div>
+<table>
+	<th>
+		<td>Name</td>
+		<td>Number</td>
+	</th>
+</table>
+
+
+
+
+<!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><i class="fas fa-plus"></i></button>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Add Name and Number</h4>
+      <span>  <button type="button" class="close" data-dismiss="modal">&times;</button></span>
+      </div>
+      <div class="modal-body">
+        <form id="addNumberForm">
+        	<div class="form-group">
+        		<label for="myname">Name</label>
+        		<input type="text" class="form-control" name="myname" placeholder="Alex" id="myname">
+        	</div>
+        	<div class="form-group">
+        		<label for="mynumber">Number</label>
+        		<input type="text" class="form-control" name="mynumber" placeholder="98XXXXXXXX" id="mynumber">
+        	</div>
+        	<button class="btn btn-lg btn-primary btn-block" type="submit" onclick="addNumber()">Add</button>
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>

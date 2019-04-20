@@ -2,17 +2,18 @@
 <html>
     <head>
         <title>
-          Bachao-App
+          Bachaao-App
         </title>
             <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="./bootstrap-4.3.1-dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="./assets/css/style.css">
 <script src="./bootstrap-4.3.1-dist/js/popper.min.js"></script>
 <script src="./bootstrap-4.3.1-dist/js/jquery.min.js"></script>
 <script src="./bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
-<script src="./script.js" type="text/javascript"></script>
-<script src="cordova.js"></script>
+<script src="./assets/js/script.js" type="text/javascript"></script>
+
+
 </head>
 <body>
 
@@ -36,7 +37,10 @@
      <button class="menu-item btn btn-warning btn-lg" onclick="pushAlarm()" id="alarmLabel">Alarm</button>
 
    </br>
-     <button class="menu-item btn btn-secondary btn-lg" onclick="callPolice()">Police</button></br>
+    <!-- <a href="tel:100"> -->
+     <button class="menu-item btn btn-secondary btn-lg" onclick="callPolice()">Police</button>
+     <!-- </a> -->
+   </br>
      <button class="menu-item btn btn-success btn-lg" onclick="eCall()">E-numbers</button><br>
      <button class="menu-item btn btn-danger btn-lg" onclick="helpMe()">Help Me!</button>
      <button class="menu-item btn btn-danger btn-lg">Anti-Child Marriage</button>
@@ -46,5 +50,6 @@
    <div id="mylocation"></div>
   </div>
 </div>
+                     
 </body>
 </html>

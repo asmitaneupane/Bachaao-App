@@ -23,15 +23,8 @@
     });
     </script> 
 
-<!-- <div id="navbar"></div>
-<table>
-	<th>
-		<td>Name</td>
-		<td>Number</td>
-	</th>
-</table>
-
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><i class="fas fa-plus"></i></button>
+<div id="navbar"></div>
+<button type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#myModal">Add</i></button>
 
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -45,11 +38,11 @@
         <form id="addNumberForm">
         	<div class="form-group">
         		<label for="myname">Name</label>
-        		<input type="text" class="form-control" name="myname" placeholder="Alex" id="myname">
+        		<input type="text" class="form-control" name="myname" placeholder="Alex" id="name">
         	</div>
         	<div class="form-group">
         		<label for="mynumber">Number</label>
-        		<input type="text" class="form-control" name="mynumber" placeholder="98XXXXXXXX" id="mynumber">
+        		<input type="text" class="form-control" name="mynumber" placeholder="98XXXXXXXX" id="number">
         	</div>
         	<button class="btn btn-lg btn-primary btn-block" type="submit" onclick="addNumber()">Add</button>
         </form>
@@ -61,7 +54,7 @@
     </div>
 
   </div>
-</div> -->
+</div>
 
 
 <div class="h1">List of Numbers</div>
@@ -77,14 +70,6 @@
 
 <button type="button" class="btn btn-primary mb-2" onclick=refreshList()>Refresh List</button>
 
-<form class="form-inline">
-    <label class="sr-only" for="number">Name</label>
-    <input type="text" class="form-control mb-2 mr-sm-2" id="name" placeholder="Name of Person">
-    
-    <label class="sr-only" for="number">Name</label>
-    <input type="text" class="form-control mb-2 mr-sm-2" id="number" placeholder="Contact Number">
-    <button type="button" class="btn btn-primary mb-2" onclick=addNumber()>Add</button>
-</form>
 </div>
 <script>
 $(function(){
@@ -108,7 +93,7 @@ function drawRow(rowData) {
     row.append($(markup));
     
 }
-$('<input></input>').attr({'type': 'button'}).val("delete").click(function(){
+$('<input></input>').attr({'type': 'button'}).val("delete").addClass("btn btn-danger mb-2").click(function(){
           var row = $(this).closest("tr").find("td:nth-child(1)");
           var key = row.text();
           removeNumber(key);

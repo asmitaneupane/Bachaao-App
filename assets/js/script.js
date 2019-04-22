@@ -133,3 +133,22 @@ function getRow(element)
 
 
 
+document.addEventListener('deviceready', function () {
+
+  // cordova.plugins.backgroundMode is now available
+    cordova.plugins.backgroundMode.enable();
+    cordova.plugins.backgroundMode.overrideBackButton();
+    check = cordova.plugins.backgroundMode.isActive();
+    console.log("is active ?"+check);
+
+    cordova.plugins.backgroundMode.setDefaults({
+      title: "Bachaao",
+      text: "Click for emergency help !",
+      icon: 'icon',
+      color: '#ddd',
+      resume: true,
+      hidden: false,
+      bigText: true
+  });
+}, false);
+
